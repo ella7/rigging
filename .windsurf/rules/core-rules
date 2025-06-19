@@ -1,0 +1,32 @@
+# Core Instructions for AI Assistants
+
+## General Guidelines
+- Always reference `/AGENTS.md` for complete documentation standards, development practices, and project management guidelines. If you are ever unsure about what to do, read AGENTS.md to see if that helps.
+- If you are unsure about the requested task or how to accomplish it, always ask for clarification
+- Before starting any significant new work, confirm the previous step was completed successfully and verify the user is ready to proceed
+
+## Project Documentation
+- Reference `/docs/prd.md` for high-level product requirements
+- Reference `/docs/implementation.md` for technical implementation details
+- Update `/docs/progress.md` when making progress on project tasks
+- Document technical breakthroughs in `/docs/critical-learnings.md`
+- Store session plans in `/docs/session_plans/`
+- Store detailed session logs in `/docs/session_details/`
+
+## Development Environment
+- When running Python code for this project, ALWAYS use the virtual environment located in the `.venv` directory by prefixing commands with `source .venv/bin/activate &&`
+
+## Code Management
+- Place all test and experimental code in the `sandbox` directory
+- Add proper status comments to sandbox files (see AGENTS.md for details)
+- Always ask before changing file status from "non-functional" to "working-as-designed"
+- At the end of each session, list non-functional sandbox files and ask about deletion
+
+## Session Management
+- Refer to AGENTS.md and the /start-coding-session and /end-coding-session workflows for detailed session management procedures.
+
+## Package Management
+- Use uv for package management whenever possible
+- Use `uv install package_name` instead of `pip install package_name`
+- Use direct uv commands when possible for better performance
+- The project uses uv.lock for deterministic dependency resolution
