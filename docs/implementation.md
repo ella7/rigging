@@ -22,20 +22,20 @@
 graph TD
   subgraph "Clients"
     CLI[rigging CLI]
-    WebPortal[Web Portal (Browse/Search/Publish)]
+    WebPortal["Web Portal | Browse/Search/Publish"]
   end
 
   subgraph "Backend Infrastructure"
     API[Registry API]
-    DB[PostgreSQL DB (Metadata)]
-    ObjectStore[Object Storage (Package Blobs)]
-    CDN[Static Asset CDN (Package Blobs)]
+    DB["PostgreSQL DB | Metadata"]
+    ObjectStore["Object Storage | Package Blobs"]
+    CDN["Static Asset CDN | Package Blobs"]
     ScanService[Scan Service]
   end
 
   %% Client <-> API (Control Plane: metadata, search, publish actions)
-  CLI -->|REST/JSON (Search, Publish, Install-Metadata)| API
-  WebPortal -->|HTTPS (Browse, Search, Publish)| API
+  CLI -->|REST/JSON &#40;Search, Publish, Install-Metadata&#41;| API
+  WebPortal -->|HTTPS &#40;Browse, Search, Publish&#41;| API
 
   %% API <-> Core Backend Components
   API --> DB
